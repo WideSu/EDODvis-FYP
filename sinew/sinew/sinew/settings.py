@@ -27,9 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
+DEBUG = False
+# DEFAULT_FROM_EMAIL = 'webmaster@example.com'
 
-ALLOWED_HOSTS = os.environ.get('HOSTS')
+ALLOWED_HOSTS = ["*"] # os.environ.get('HOSTS')
 
 CORS_ALLOW_HEADERS = ['*']
 
@@ -89,7 +90,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'sinew.wsgi.application'
+# WSGI_APPLICATION = 'sinew.wsgi.application'
 
 
 # Database
@@ -97,12 +98,12 @@ WSGI_APPLICATION = 'sinew.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql_psycopg2",
-        'NAME': os.environ.get('DATABASE_NAME'),
-        'USER': os.environ.get('DATABASE_USER'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+        'ENGINE': "django.db.backends.postgresql",
+        'NAME': 'postgres', # os.environ.get('DATABASE_NAME'),
+        'USER': 'postgres', #os.environ.get('DATABASE_USER'),
+        'PASSWORD': "123456",# os.environ.get('DATABASE_PASSWORD'),
         'HOST': os.environ.get('HOST'),
-        'PORT': os.environ.get('PORT')
+        'PORT': 5432 # os.environ.get('PORT')
     }
 }
 
