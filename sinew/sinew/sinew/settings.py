@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # DEFAULT_FROM_EMAIL = 'webmaster@example.com'
 
-ALLOWED_HOSTS = ["*"] # os.environ.get('HOSTS')
+ALLOWED_HOSTS = ['127.0.0.1'] # os.environ.get('HOSTS')
 
 CORS_ALLOW_HEADERS = ['*']
 
